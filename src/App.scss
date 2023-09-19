@@ -14,10 +14,25 @@
   overflow: hidden;
 }
 
+@function cor-fundo() {
+  @return $cor-hover;
+}
+
 * {
   margin: 0;
   padding: 0;
   font-family: $font-principal;
+
+  background: cor-fundo();
+}
+
+.text-shadow {
+  text-shadow: 2px 1px 1px #bfb7b7;
+}
+
+.border-shadow {
+  border: 2px solid rgb(7, 29, 99);
+  box-shadow: 2px 2px 2px rgb(31, 32, 151);
 }
 
 .container {
@@ -74,6 +89,8 @@
       padding: 15px;
 
       @include tituloPadrao;
+
+      @extend .text-shadow;
     }
 
     div {
@@ -91,6 +108,8 @@
         margin-bottom: 20px;
         margin-right: 15px;
         display: flex;
+
+        @extend .border-shadow;
       }
     }
   }
